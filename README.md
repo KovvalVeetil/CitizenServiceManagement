@@ -1,24 +1,11 @@
-# README
+#  Citizen Services Management System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Citizen Services Management System is a backend-only system designed to improve the efficiency of managing service requests from citizens to local government. It aims to ensure timely responses and accountability while automating routine tasks. The system will enable role-based workflows for citizens, administrators, and department users.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Core Architecture
+Framework: Ruby on Rails
+Database: PostgreSQL
+Background Jobs: Sidekiq with Redis
+Authentication: Devise
+Authorization: Pundit
+Testing Frameworks: RSpec, FactoryBot, Faker
