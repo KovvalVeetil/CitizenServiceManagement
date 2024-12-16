@@ -4,9 +4,9 @@ class ServiceRequestPolicy < ApplicationPolicy
       if user.admin?
         scope.all
       elsif user.department_user?
-        scope.where(category: user.department_category)
+        scope.all
       else
-        scope.where(user: user)
+        scope.where(user_id: user.id)
       end
     end
   end
@@ -15,8 +15,11 @@ class ServiceRequestPolicy < ApplicationPolicy
     user.citizen?
   end
 
+  # def update?
+  #   user.admin? || (user.department_user? && record.category == user.department_category)
+  # end
   def update?
-    user.admin? || (user.department_user? && record.category == user.department_category)
+    user.admin? || user.citizen? || user.department_user
   end
 
   def destroy?
